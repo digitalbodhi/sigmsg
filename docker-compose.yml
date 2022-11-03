@@ -1,0 +1,13 @@
+version: "3"
+services:
+  signal-cli:
+    container_name: signal-cli
+    image: registry.gitlab.com/packaging/signal-cli/signal-cli-jre:latest
+    build: './docker-image/signal-cli'
+    command: --trust-new-identities always daemon --tcp 0.0.0.0:7583
+    ports:
+      - "7583:7583"
+    volumes:
+      - "./docker-image/persisted-data/signal-cli:/root/.local/share/signal-cli/data"
+    tmpfs:
+      - "/tmp:exec"
