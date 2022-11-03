@@ -28,7 +28,7 @@ signal-cli link -n "seconddevice" | tee >(xargs -L 1 qrencode -t utf8)
 pip install -r requirements.txt
 
 # Then make sure to modify the config.yaml with your specific host, port, phone number, etc...
-mv config.yaml.txt config.yaml
+mv config.yaml.example config.yaml
 vim config.yaml
 ```
 
