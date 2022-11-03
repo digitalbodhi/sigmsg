@@ -26,6 +26,9 @@ signal-cli link -n "seconddevice" | tee >(xargs -L 1 qrencode -t utf8)
 
 # load the packages used to run the program
 pip install -r requirements.txt
+
+# Then make sure to modify the config.yaml with your specific host, port, phone number, etc...
+vim config.yaml
 ```
 
 ## Usage
